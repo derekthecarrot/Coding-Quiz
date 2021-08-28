@@ -15,8 +15,8 @@
                 <p>Try to answer the following code-related questions within the time limit. Keep in mind tha tincorrect answers will penalize your score/time by ten seconds!</p>
                 <button id="start-btn" class="btn" type="button">Start Quiz</button>
               </div>
-              
-              <div id="section-2">
+              <!--QUESTION SECTION-->
+              <div id="section-2" class="hide">
                 <h2>[will be blank place holder for question]</h2>
                 <div class="answers-btn">
                   <button class="btn">[will be blank place holder for answer choice 1]</button>
@@ -24,13 +24,16 @@
                   <button class="btn">[will be blank place holder for answer choice 3]</button>
                   <button class="btn">[will be blank place holder for answer choice 4]</button>
                 </div>
-                <div class="section-2-ptags">
-                  <p id="correct" class="section-2-ptag-margin">Correct!</p>
-                  <p id="wrong" class="section-2-ptag-margin">Wrong!</p>
+                <!--QUESTION SECTION-->
+                <!--CORRECT/WRONG-->
+                <div class="section-2-ptags" class="hide">
+                  <p id="correct" class="section-2-ptag-margin" class="hide">Correct!</p>
+                  <p id="wrong" class="section-2-ptag-margin" class="hide">Wrong!</p>
                 </div>
+                <!--CORRECT/WRONG-->
               </div>
               
-              <div id="section-3">
+              <div id="section-3" class="hide">
                 <h2>[placeholder for "All done!"]</h2>           <p>Your final score is: [place holder for final score]<p>
                 <form>
                   <label for="fname">Enter initials: </label>
@@ -38,8 +41,8 @@
                   <input type="submit" class="btn">
                 </form>
               </div>
-              <div class="corner-div top-right">
-                <p>Time Left:<span id="count">60</span> seconds</p>
+              <div id=timer-section class="corner-div top-right hide">
+                <p>Time Left:<span id="time" ></span> seconds</p>
               </div>
             </section>
         </section>

@@ -17,7 +17,7 @@ div {
   .center-body {
     margin: 0 auto;
     display: block;
-    jusify-content: center;
+    justify-content: center;
     align-items: center;
     margin-top: 40px;
     width: 600px;
@@ -29,7 +29,6 @@ div {
   
   /* change from display: block, to display: none; to remove this section. */
   #section-1 {
-    display: block;
     justify-content: center;
     text-align: center;
   }
@@ -46,10 +45,6 @@ div {
     cursor: pointer;
     transition: .1s ease-in-out 0s;
     transform: scale(1.05);
-  }
-  /* change from display: block, to display: none; to remove this section. */
-  #section-2 {
-    display: block;
   }
   
   h2 {
@@ -76,22 +71,7 @@ div {
   .section-2-ptag-margin {
     margin-top: 2px;
   }
-  /* change from display: block, to display: none; to remove this. */
-  #correct{
-    display: block;
-  }
-  /* change from display: block, to display: none; to remove this.*/
-  #wrong {
-    display: block;
-  }
-  /* change from display: block, to display: none; to remove this section. */
-  #section-3 {
-    display: block;
-  }
-  /* change from display: block, to display: none; to remove this section. */
-  #section-4 {
-    display: block;
-  }
+
   
   .highscore-ol {
     padding-left: 0;
@@ -105,46 +85,7 @@ div {
   .highscore-ol li:nth-child(odd) {
     background-color: rgba(75,0,130, .2);
   }
-  /* change from display: block, to display: none; to remove these indivually */
-  #highscore-1 {
-    display: block;
-  }
-  
-  #highscore-2 {
-    display: block;
-  }
-  
-  #highscore-3 {
-    display: block;
-  }
-  
-  #highscore-4 {
-    display: block;
-  }
-  
-  #highscore-5 {
-    display: block;
-  }
-  
-  #highscore-6 {
-    display: none;
-  }
-  
-  #highscore-7 {
-    display: none;
-  }
-  
-  #highscore-8 {
-    display: none;
-  }
-  
-  #highscore-9 {
-    display: none;
-  }
-  
-  #highscore-10 {
-    display: none;
-  }
+ 
   
   #section-4 button {
     margin-right: 10px;
@@ -156,4 +97,12 @@ div {
   
   .top-right p {
     margin: 0px;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .show {
+    display: block;
   }
