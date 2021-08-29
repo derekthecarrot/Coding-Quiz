@@ -23,17 +23,22 @@
             <div class="container">
               <div id="section-2" class="hide">
                 <div id="question">Question</div>
-                <div class="answers-btn">
+                <div id="answers-btn" class="btn-grid">
                   <button class="btn">[will be blank place holder for answer choice 1]</button>
                   <button class="btn">[will be blank place holder for answer choice 2]</button>
                   <button class="btn">[will be blank place holder for answer choice 3]</button>
                   <button class="btn">[will be blank place holder for answer choice 4]</button>
                 </div>
-                <!--CORRECT/WRONG-->
-                <div class="section-2-ptags" class="hide">
-                  <p id="correct" class="section-2-ptag-margin" class="hide">Correct!</p>
-                  <p id="wrong" class="section-2-ptag-margin" class="hide">Wrong!</p>
+                <div class="controls">
+                  <button id="next-btn" class="next-btn btn hide">Next</button>
                 </div>
+                <!--CORRECT/WRONG-->
+              </div>
+              <div class="section-2-ptags hide" id=correctdiv>
+                <p id="correct" class="section-2-ptag-margin">Correct!</p>
+              </div>
+              <div class="section-2-ptags hide" id="wrongdiv">
+                <p id="wrong" class="section-2-ptag-margin">Wrong!</p>
               </div>
             </div>
                 <!--HIGHSCORE SUBMIT SECTION-->

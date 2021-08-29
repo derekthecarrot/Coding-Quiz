@@ -1,22 +1,39 @@
 
 // variables for page manipulation
 const startButton = document.getElementById('start-btn')
-const nextButton = document.getElementsByClassName('next-btn')
+const nextButton = document.getElementById('next-btn')
 const sectionOne = document.getElementById('section-1')
 const sectionTwo = document.getElementById('section-2')
 const timerSection = document.getElementById('timer-section')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answers-btn')
+const wrongDiv = document.getElementById('wrongdiv')
+const correctDiv = document.getElementById('correctdiv')
 
 let shuffledQuestions, currentQuestionIndex
 
 // STARTS TIMER ON START QUIZ BUTTON
 startButton.addEventListener('click', startGame)
+nextButton.addEventListener('click', () => {
+  currentQuestionIndex++
+  setNextQuestion()
+})
 
 var timeEl = document.getElementById("time");
 var secondsLeft = 60;
-
 function startGame(){
+        // shows and hides proper sections based on button clicks
+  sectionOne.classList.add('hide')
+  shuffledQuestions = questions.sort(() => Math.random() - .5)
+  currentQuestionIndex = 0
+  sectionTwo.classList.remove('hide')
+  timerSection.classList.remove('hide')
+  nextButton.classList.remove('hide')
+  setNextQuestion()
+  startTimer()
+}
+
+function startTimer(){
 
     // Sets interval in variable
     var timerInterval = setInterval(function () {
@@ -29,13 +46,8 @@ function startGame(){
           alert = "Time is up!";
 
       }
-      // shows and hides proper sections based on button clicks
-      sectionOne.classList.add('hide')
-      shuffledQuestions = questions.sort(() => Math.random() - .5)
-      currentQuestionIndex = 0
-      sectionTwo.classList.remove('hide')
-      timerSection.classList.remove('hide')
-      setNextQuestion()
+
+
 
       
       
@@ -52,7 +64,7 @@ function showQuestion(question) {
   question.answers.forEach(answer => {
     const button = document.createElement('button')
     button.innerText = answer.text
-    button.classList.add('next-btn')
+    button.classList.add('btn')
     if (answer.correct) {
       button.dataset.correct = answer.correct
     }
@@ -62,15 +74,46 @@ function showQuestion(question) {
 }
 
 function resetState() {
-  for (var i = 0; i<nextButton.length; i++) {
-    elements[i].classList.add('hide');
+  clearStatusClass(document.body)
+  nextButton.classList.add('hide')
   while (answerButtonsElement.firstChild) {
-    answerButtonsElement.removeChild(answerButtonsElement.first)
+    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
   }
 }
-}
-function selectAnswer() {
 
+function selectAnswer(e) {
+  const selectedButton = e.target
+  const correct = selectedButton.dataset.correct
+  setStatusClass(document.body, correct)
+  Array.from(answerButtonsElement.children).forEach(button => {
+    setStatusClass(button, button.dataset.correct)
+  })
+  if (shuffledQuestions.length > currentQuestionIndex + 1) {
+    nextButton.classList.remove('hide')
+  } else {
+    startButton.innerText = 'Restart'
+    startButton.classList.remove('hide')
+  }
+}
+
+function setStatusClass(element, correct) {
+  clearStatusClass(element)
+  if (correct) {
+    element.classList.add('correct')
+    correctDiv.classList.remove('hide')
+  } else {
+    element.classList.add('wrong')
+    wrongDiv.classList.remove('hide')
+    secondsLeft = secondsLeft - 5;
+
+  }
+}
+
+function clearStatusClass(element) {
+  correctDiv.classList.add('hide')
+  wrongDiv.classList.add('hide')
+  element.classList.remove('correct')
+  element.classList.remove('wrong')
 }
 
 // QUESTION VARIABLES

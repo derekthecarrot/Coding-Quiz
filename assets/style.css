@@ -6,12 +6,36 @@
   box-sizing: border-box;
 }
 
+
 div {
     border: 1px solid red;
   }
   
   body {
     height: 100vh;
+  }
+
+  body.correct {
+    background-color: green;
+  }
+
+  body.wrong {
+    background-color: red;
+  }
+
+  btn.correct {
+    background-color: green;
+  }
+
+  btn.wrong {
+    background-color: red;
+  }
+  
+  .btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
   }
   
   .whole-body {
@@ -41,9 +65,9 @@ div {
   .btn {
     background-color: #4B0082;
     color: white;
-    border: none;
     border-radius: 5px;
-    padding: 5px;
+    padding: 5px 10px;
+    outline: none;
   }
   
   .btn:hover {
