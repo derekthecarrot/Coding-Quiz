@@ -1,7 +1,21 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="./assets/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/style.css">
+  <title>Highscore</title>
 </head>
+<body>
+<div class="container">
+  <div id="section-3">
+    <h2>[placeholder for "All done!"]</h2>           <p>Your final score is: [place holder for final score]<p>
+    <form>
+      <input type="text" name="username" id="username" placeholder="Initials Here"/>
+      <button type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore">Save</button>
+    </form>
+  </div>
 <div id="section-4">
     <h2>Highscores</h2>
     <div>
@@ -22,3 +36,8 @@
     <button class="btn">Clear Highscores</button>
   </div>
 </section>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src= ./assets/highscore.js></script>
+</body>
+</html>
