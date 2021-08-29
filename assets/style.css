@@ -1,6 +1,11 @@
 /* for each option that has display: block; change display from block to none in js or the css file to hide the content */
 
 /* Remove this div entirely to remove the red borders around everything */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 div {
     border: 1px solid red;
   }
