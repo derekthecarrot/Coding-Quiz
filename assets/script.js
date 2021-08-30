@@ -12,6 +12,10 @@ const correctDiv = document.getElementById('correctdiv')
 
 let shuffledQuestions, currentQuestionIndex
 
+var timeEl = document.getElementById("time");
+var secondsLeft = 60;
+
+
 // STARTS TIMER ON START QUIZ BUTTON
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
@@ -19,8 +23,7 @@ nextButton.addEventListener('click', () => {
   setNextQuestion()
 })
 
-var timeEl = document.getElementById("time");
-var secondsLeft = 60;
+
 function startGame(){
         // shows and hides proper sections based on button clicks
   sectionOne.classList.add('hide')
@@ -40,16 +43,13 @@ function startTimer(){
       secondsLeft--;
       timeEl.textContent = secondsLeft;
 
-      if (secondsLeft === 0) {
+      if (secondsLeft <= 0) {
           // Stops execution of action at set interval
           clearInterval(timerInterval);
           alert = "Time is up!";
 
       }
-
-
-
-      
+  
       
   }, 1000);
 }
@@ -104,7 +104,7 @@ function setStatusClass(element, correct) {
   } else {
     element.classList.add('wrong')
     wrongDiv.classList.remove('hide')
-    secondsLeft = secondsLeft - 5;
+    secondsLeft = secondsLeft - 2;
 
   }
 }
