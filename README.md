@@ -16,7 +16,7 @@ Table of Contents
 
 ## Installation
 
-User will need to install and use within a web browser (EX: Google Chrome, Safari, IE, Mozilla Firefox) in order to open the password generator link - https://https://derekthecarrot.github.io/Coding-Quiz/
+User will need to install and use within a web browser (EX: Google Chrome, Safari, IE, Mozilla Firefox) in order to open the password generator link - https://derekthecarrot.github.io/Coding-Quiz/
 
 ## Usage
 
