@@ -49,7 +49,11 @@ function startTimer(){
           alert = "Time is up!";
 
       }
-  
+
+      if (currentQuestionIndex === questions.length -1 || timeEl === 0) {
+        clearInterval(timerInterval);
+        endGame()
+      }
       
   }, 1000);
 }
@@ -57,6 +61,7 @@ function startTimer(){
 function setNextQuestion() {
   resetState()
   showQuestion(shuffledQuestions[currentQuestionIndex])
+
 }
 
 function showQuestion(question) {
@@ -114,6 +119,15 @@ function clearStatusClass(element) {
   wrongDiv.classList.add('hide')
   element.classList.remove('correct')
   element.classList.remove('wrong')
+}
+
+function endGame() {
+
+  localStorage.setItem('mostRecentScore', secondsLeft);
+
+  if (currentQuestionIndex === questions.length -1) {
+  return window.location.assign('./highscore.html')
+  }
 }
 
 // QUESTION VARIABLES

@@ -1,10 +1,19 @@
 //highscore input
-const username = document.getElementById("username")
+const username = document.getElementById("username");
 const saveScoreBtn = document.getElementById('saveScoreBtn');
-const finalScore = document.getElementById('finalScore')
-const mostRecentScore = localStorage.getItem("mostRecentScore")
+const finalScore = document.getElementById('finalScore');
+const fnlScore = document.getElementById('score1')
+const mostRecentScore = localStorage.getItem('mostRecentScore');
+const highScoresList = document.getElementById('highScoresList');
+const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+const clearHigh = document.getElementById('clearHigh');
 
-finalScore.innerText = mostRecentScore; // need to set a localstorage in index.html to get mostRecentScore
+const MAX_HIGH_SCORES = 5;
+console.log(highScores);
+
+
+finalScore.innerText = mostRecentScore;
+fnlScore.innerText = mostRecentScore;
 
 username.addEventListener("keyup", () => {
     console.log(username.value);
@@ -14,7 +23,24 @@ username.addEventListener("keyup", () => {
 saveHighScore = e => {
     console.log("clicked the save button!");
     e.preventDefault();
-}
 
-const highScoresList = document.getElementById('highScoresList')
-const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+    const score = {
+        score: mostRecentScore,
+        name: username.value
+    };
+    
+    highScores.push(score);
+    highScores.sort((a, b) => b.score - a.score);
+    highScores.splice(5);
+
+    localStorage.setItem('highScores', JSON.stringify(highScores))
+
+    console.log(highScores);
+};
+
+highScoresList.innerHTML = highScores
+     .map( score => {
+        return `<li class="high-score>${score.name}-${score.score}</li>`;
+})
+.join("");
+
