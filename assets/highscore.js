@@ -14,11 +14,14 @@ console.log(highScores);
 
 finalScore.innerText = mostRecentScore;
 fnlScore.innerText = mostRecentScore;
+//event listener for username input
 
 username.addEventListener("keyup", () => {
     console.log(username.value);
     saveScoreBtn.disabled = !username.value;
 });
+
+//save button with local storage to print a list to screen
 
 saveHighScore = e => {
     console.log("clicked the save button!");
@@ -39,8 +42,12 @@ saveHighScore = e => {
 };
 
 highScoresList.innerHTML = highScores
-     .map( score => {
-        return `<li class="high-score>${score.name}-${score.score}</li>`;
+     .map(score => {
+        return `<li class="high-score">${score.name}-${score.score}</li>`;
 })
 .join("");
+//clear button
 
+clearHigh.addEventListener('click', function(event){
+    localStorage.clear();
+})

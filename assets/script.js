@@ -50,7 +50,7 @@ function startTimer(){
 
       }
 
-      if (currentQuestionIndex === questions.length -1 || timeEl === 0) {
+      if (currentQuestionIndex === questions.length -1 || secondsLeft <= 0) {
         clearInterval(timerInterval);
         endGame()
       }
@@ -125,7 +125,7 @@ function endGame() {
 
   localStorage.setItem('mostRecentScore', secondsLeft);
 
-  if (currentQuestionIndex === questions.length -1) {
+  if (currentQuestionIndex === questions.length -1 || secondsLeft <= 0) {
   return window.location.assign('./highscore.html')
   }
 }
