@@ -79,7 +79,7 @@ function showQuestion(question) {
 }
 
 function resetState() {
-  clearStatusClass(document.body)
+  clearStatusClass(wrongDiv, correctDiv)
   nextButton.classList.add('hide')
   while (answerButtonsElement.firstChild) {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild)
@@ -89,7 +89,7 @@ function resetState() {
 function selectAnswer(e) {
   const selectedButton = e.target
   const correct = selectedButton.dataset.correct
-  setStatusClass(document.body, correct)
+  setStatusClass(correctDiv, correct)
   Array.from(answerButtonsElement.children).forEach(button => {
     setStatusClass(button, button.dataset.correct)
   })
@@ -97,7 +97,6 @@ function selectAnswer(e) {
     nextButton.classList.remove('hide')
   } else {
     startButton.innerText = 'Restart'
-    startButton.classList.remove('hide')
   }
 }
 

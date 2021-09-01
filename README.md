@@ -1,7 +1,7 @@
 # Coding Quiz
 
 ## Description
-Hello, I built this coding quiz in order to seek improvement on my Javascript. My biggest challenge still seems to be stepping through the code. It seems hard to properly evaluate when what needs to be done.
+Hello, I built this coding quiz in order to seek improvement on my Javascript. My biggest challenge still seems to be stepping through the code. It seems hard to properly evaluate when what needs to be done. Debugging and learning whats wrong (for it to only be a quotation mark or parenthesis is also a struggle). I overcame these issues with patience and time, and just kept working on what could be happening through my functions.
 
 
 Table of Contents
@@ -16,18 +16,27 @@ Table of Contents
 
 ## Installation
 
-User will need to install and use within a web browser (EX: Google Chrome, Safari, IE, Mozilla Firefox) in order to open the password generator link - https://https://derekthecarrot.github.io/PasswordGenerator/
+User will need to install and use within a web browser (EX: Google Chrome, Safari, IE, Mozilla Firefox) in order to open the password generator link - https://https://derekthecarrot.github.io/Coding-Quiz/
 
 ## Usage
 
-In order to use and open this project, please visit https://derekthecarrot.github.io/PasswordGenerator/ within any web browser.
-After that, if you click the generate password button - it will run a function that will bring up windows asking how long you want your password to be. It cannot be less than 8 characters and it cannot be more than 128. If you try those, it will not let you and send a prompt stating to choose one that meets the parameters. Once you choose one that meets the parameters - it will ask you if you want Uppercase, Numeric, Lowercase, or Special Characters. Depending on what you click - it will generate a password in the box with the series you have selected.
+In order to use and open this project, please visit https://derekthecarrot.github.io/Coding-Quiz/ within any web browser.
+To start the game, hit the start quiz button. It will bring out a selection of questions where you can click a button and then hit the next button.
+If you run out of time - it will end the game and bring you to the high score page.
+If you go through all questions before the timer ends, it will bring you to the highscore page.
+At the high score page, you can enter your initials where it will set a localstorage - after you hit save, you can refresh and see your highscore entries.
+After that, you can go back if you choose - or hit to the clear the highscores, after you hit this and refresh the entries will disappear.
 
-![My Website](https://derekthecarrot.github.io/PasswordGenerator/Assets/screenshot.PNG)
+
+![My Website](https://derekthecarrot.github.io/Coding-Quiz/assets/screenshot.PNG)
 
 ## Credits
 
-I ended up watching a Javascript course and googled a few things in order to code this. Youtube link below.
+I used several youtube videos and attempted to adapt them to what I needed as well as conferring with my peers to figure out a solution for this.
+
+
+Links: https://www.youtube.com/watch?v=riDzcEQbX6k&ab_channel=WebDevSimplified
+https://www.youtube.com/watch?v=o3MF_JmQxYg&ab_channel=JamesQQuick
 
 
 ## License

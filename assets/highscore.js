@@ -46,6 +46,7 @@ highScoresList.innerHTML = highScores
         return `<li class="high-score">${score.name}-${score.score}</li>`;
 })
 .join("");
+
 //clear button
 
 clearHigh.addEventListener('click', function(event){
